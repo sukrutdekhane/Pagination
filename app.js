@@ -1,9 +1,4 @@
 let index;
-function setIndex() {
-  const array = document.querySelectorAll("a");
-  index = array[0].textContent;
-  console.log(array);
-}
 
 async function generateTable() {
   try {
@@ -28,5 +23,3 @@ async function generateTable() {
     console.error(error);
   }
 }
-
-generateTable();
