@@ -1,10 +1,26 @@
-let productsArray = [];
-fetch("https://dummyjson.com/products")
-  .then((res) => res.json())
-  .then((data) => {
-    productsArray = data.products;
-    console.log(productsArray);
-  })
-  .catch((error) => {
-    console.error("Error fetching data:", error);
-  });
+async function generateTable() {
+  try {
+    const response = await fetch("https://dummyjson.com/products");
+    const productsArray = await response.json();
+    console.log(productsArray.products);
+    let table = "<table class='center-table'>";
+    table += `<tr class='table-head'>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Price</th>
+    </tr>`;
+
+    for (i = 0; i < 5; i++) {
+      table += `<tr class='table-row'><td>${productsArray.products[i].id}</td><td>${productsArray.products[i].title}</td><td>${productsArray.products[i].description}</td><td>${productsArray.products[i].category}</td><td>${productsArray.products[i].price}</td></tr>`;
+    }
+    table += "</table>";
+    const tableContainer = document.getElementById("container");
+    tableContainer.innerHTML = table;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+generateTable();

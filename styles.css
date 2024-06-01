@@ -1,4 +1,4 @@
-.container {
+#container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,12 +19,6 @@
   
   tr:nth-child(even) {
     background-color: #dddddd;
-  }
-
-  .table-row td{
-    height: 15px; 
-    line-height: 25px; 
-    padding: 0;
   }
 
   a{
