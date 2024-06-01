@@ -29,7 +29,7 @@
     border: 1px solid #000;
     background-color: lightgrey;
   }
-  .pagination{
+  #pagination{
     text-align: center;
     padding-top: 5%;
   }

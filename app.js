@@ -1,8 +1,14 @@
+let index;
+function setIndex() {
+  const array = document.querySelectorAll("a");
+  index = array[0].textContent;
+  console.log(array);
+}
+
 async function generateTable() {
   try {
     const response = await fetch("https://dummyjson.com/products");
     const productsArray = await response.json();
-    console.log(productsArray.products);
     let table = "<table class='center-table'>";
     table += `<tr class='table-head'>
       <th>Id</th>
